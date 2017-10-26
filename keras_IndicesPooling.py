@@ -1,5 +1,5 @@
 from keras import backend as K
-from keras.layers.convolutional import UpSampling2D, ZeroPadding2D
+from keras.layers.convolutional import UpSampling2D
 from keras.layers.pooling import MaxPooling2D
 from keras.layers.core import Layer
 from keras.layers.merge import Multiply, Concatenate
@@ -167,7 +167,7 @@ class _Merge(Layer):
         return K.all(K.concatenate(masks, axis=0), axis=0, keepdims=False)
 
 # UnPooling2D layey:input feature maps and mask
-class UnPooling2D(_Merge):
+class UnPooling2DIndices(_Merge):
     def _merge_function(self, inputs):
         x = inputs[0]
         mask = inputs[1]
