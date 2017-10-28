@@ -175,9 +175,10 @@ if __name__ == "__main__":
     parser.add_argument("--n_labels", default=10, type=int, help="Number of label")
     parser.add_argument("--kernel", default=3, type=int, help="Kernel size")
     parser.add_argument("--pool_size", default=(2, 2), help="")
+    parser.add_argument("--loss_mode", default="softmax", type=str, help="")
     args = parser.parse_args()
 
-    segnet = CreateSegNet(args.input_shape, args.n_labels, args.kernel, args.pool_size)
+    segnet = CreateSegNet(args.input_shape, args.n_labels, args.kernel, args.pool_size, args.loss_mode)
     print(segnet.summary())
 
     with open("SegNet_model.json", "w") as json_file:
