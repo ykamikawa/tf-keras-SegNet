@@ -250,21 +250,11 @@
         ]
       },
       {
-        "name": "max_pooling2d_1",
-        "class_name": "MaxPooling2D",
+        "name": "max_pooling_with_argmax2d_1",
+        "class_name": "MaxPoolingWithArgmax2D",
         "config": {
-          "name": "max_pooling2d_1",
-          "trainable": true,
-          "pool_size": [
-            2,
-            2
-          ],
-          "padding": "valid",
-          "strides": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
+          "name": "max_pooling_with_argmax2d_1",
+          "trainable": true
         },
         "inbound_nodes": [
           [
@@ -322,7 +312,7 @@
         "inbound_nodes": [
           [
             [
-              "max_pooling2d_1",
+              "max_pooling_with_argmax2d_1",
               0,
               0,
               {}
@@ -508,21 +498,11 @@
         ]
       },
       {
-        "name": "max_pooling2d_3",
-        "class_name": "MaxPooling2D",
+        "name": "max_pooling_with_argmax2d_2",
+        "class_name": "MaxPoolingWithArgmax2D",
         "config": {
-          "name": "max_pooling2d_3",
-          "trainable": true,
-          "pool_size": [
-            2,
-            2
-          ],
-          "padding": "valid",
-          "strides": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
+          "name": "max_pooling_with_argmax2d_2",
+          "trainable": true
         },
         "inbound_nodes": [
           [
@@ -580,7 +560,7 @@
         "inbound_nodes": [
           [
             [
-              "max_pooling2d_3",
+              "max_pooling_with_argmax2d_2",
               0,
               0,
               {}
@@ -881,21 +861,11 @@
         ]
       },
       {
-        "name": "max_pooling2d_5",
-        "class_name": "MaxPooling2D",
+        "name": "max_pooling_with_argmax2d_3",
+        "class_name": "MaxPoolingWithArgmax2D",
         "config": {
-          "name": "max_pooling2d_5",
-          "trainable": true,
-          "pool_size": [
-            2,
-            2
-          ],
-          "padding": "valid",
-          "strides": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
+          "name": "max_pooling_with_argmax2d_3",
+          "trainable": true
         },
         "inbound_nodes": [
           [
@@ -953,7 +923,7 @@
         "inbound_nodes": [
           [
             [
-              "max_pooling2d_5",
+              "max_pooling_with_argmax2d_3",
               0,
               0,
               {}
@@ -1254,21 +1224,11 @@
         ]
       },
       {
-        "name": "max_pooling2d_7",
-        "class_name": "MaxPooling2D",
+        "name": "max_pooling_with_argmax2d_4",
+        "class_name": "MaxPoolingWithArgmax2D",
         "config": {
-          "name": "max_pooling2d_7",
-          "trainable": true,
-          "pool_size": [
-            2,
-            2
-          ],
-          "padding": "valid",
-          "strides": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
+          "name": "max_pooling_with_argmax2d_4",
+          "trainable": true
         },
         "inbound_nodes": [
           [
@@ -1326,7 +1286,7 @@
         "inbound_nodes": [
           [
             [
-              "max_pooling2d_7",
+              "max_pooling_with_argmax2d_4",
               0,
               0,
               {}
@@ -1627,61 +1587,10 @@
         ]
       },
       {
-        "name": "max_pooling2d_9",
-        "class_name": "MaxPooling2D",
+        "name": "max_pooling_with_argmax2d_5",
+        "class_name": "MaxPoolingWithArgmax2D",
         "config": {
-          "name": "max_pooling2d_9",
-          "trainable": true,
-          "pool_size": [
-            2,
-            2
-          ],
-          "padding": "valid",
-          "strides": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
-        },
-        "inbound_nodes": [
-          [
-            [
-              "activation_13",
-              0,
-              0,
-              {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "up_sampling2d_6",
-        "class_name": "UpSampling2D",
-        "config": {
-          "name": "up_sampling2d_6",
-          "trainable": true,
-          "size": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
-        },
-        "inbound_nodes": [
-          [
-            [
-              "max_pooling2d_9",
-              0,
-              0,
-              {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "max_pooling_mask2d_5",
-        "class_name": "MaxPoolingMask2D",
-        "config": {
-          "name": "max_pooling_mask2d_5",
+          "name": "max_pooling_with_argmax2d_5",
           "trainable": true
         },
         "inbound_nodes": [
@@ -1696,24 +1605,24 @@
         ]
       },
       {
-        "name": "multiply_1",
-        "class_name": "Multiply",
+        "name": "max_unpooling2d_1",
+        "class_name": "MaxUnpooling2D",
         "config": {
-          "name": "multiply_1",
+          "name": "max_unpooling2d_1",
           "trainable": true
         },
         "inbound_nodes": [
           [
             [
-              "up_sampling2d_6",
+              "max_pooling_with_argmax2d_5",
               0,
               0,
               {}
             ],
             [
-              "max_pooling_mask2d_5",
+              "max_pooling_with_argmax2d_5",
               0,
-              0,
+              1,
               {}
             ]
           ]
@@ -1764,7 +1673,7 @@
         "inbound_nodes": [
           [
             [
-              "multiply_1",
+              "max_unpooling2d_1",
               0,
               0,
               {}
@@ -2065,16 +1974,11 @@
         ]
       },
       {
-        "name": "up_sampling2d_7",
-        "class_name": "UpSampling2D",
+        "name": "max_unpooling2d_2",
+        "class_name": "MaxUnpooling2D",
         "config": {
-          "name": "up_sampling2d_7",
-          "trainable": true,
-          "size": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
+          "name": "max_unpooling2d_2",
+          "trainable": true
         },
         "inbound_nodes": [
           [
@@ -2083,47 +1987,11 @@
               0,
               0,
               {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "max_pooling_mask2d_4",
-        "class_name": "MaxPoolingMask2D",
-        "config": {
-          "name": "max_pooling_mask2d_4",
-          "trainable": true
-        },
-        "inbound_nodes": [
-          [
-            [
-              "activation_10",
-              0,
-              0,
-              {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "multiply_2",
-        "class_name": "Multiply",
-        "config": {
-          "name": "multiply_2",
-          "trainable": true
-        },
-        "inbound_nodes": [
-          [
-            [
-              "up_sampling2d_7",
-              0,
-              0,
-              {}
             ],
             [
-              "max_pooling_mask2d_4",
+              "max_pooling_with_argmax2d_4",
               0,
-              0,
+              1,
               {}
             ]
           ]
@@ -2174,7 +2042,7 @@
         "inbound_nodes": [
           [
             [
-              "multiply_2",
+              "max_unpooling2d_2",
               0,
               0,
               {}
@@ -2475,16 +2343,11 @@
         ]
       },
       {
-        "name": "up_sampling2d_8",
-        "class_name": "UpSampling2D",
+        "name": "max_unpooling2d_3",
+        "class_name": "MaxUnpooling2D",
         "config": {
-          "name": "up_sampling2d_8",
-          "trainable": true,
-          "size": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
+          "name": "max_unpooling2d_3",
+          "trainable": true
         },
         "inbound_nodes": [
           [
@@ -2493,47 +2356,11 @@
               0,
               0,
               {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "max_pooling_mask2d_3",
-        "class_name": "MaxPoolingMask2D",
-        "config": {
-          "name": "max_pooling_mask2d_3",
-          "trainable": true
-        },
-        "inbound_nodes": [
-          [
-            [
-              "activation_7",
-              0,
-              0,
-              {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "multiply_3",
-        "class_name": "Multiply",
-        "config": {
-          "name": "multiply_3",
-          "trainable": true
-        },
-        "inbound_nodes": [
-          [
-            [
-              "up_sampling2d_8",
-              0,
-              0,
-              {}
             ],
             [
-              "max_pooling_mask2d_3",
+              "max_pooling_with_argmax2d_3",
               0,
-              0,
+              1,
               {}
             ]
           ]
@@ -2584,7 +2411,7 @@
         "inbound_nodes": [
           [
             [
-              "multiply_3",
+              "max_unpooling2d_3",
               0,
               0,
               {}
@@ -2885,16 +2712,11 @@
         ]
       },
       {
-        "name": "up_sampling2d_9",
-        "class_name": "UpSampling2D",
+        "name": "max_unpooling2d_4",
+        "class_name": "MaxUnpooling2D",
         "config": {
-          "name": "up_sampling2d_9",
-          "trainable": true,
-          "size": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
+          "name": "max_unpooling2d_4",
+          "trainable": true
         },
         "inbound_nodes": [
           [
@@ -2903,47 +2725,11 @@
               0,
               0,
               {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "max_pooling_mask2d_2",
-        "class_name": "MaxPoolingMask2D",
-        "config": {
-          "name": "max_pooling_mask2d_2",
-          "trainable": true
-        },
-        "inbound_nodes": [
-          [
-            [
-              "activation_4",
-              0,
-              0,
-              {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "multiply_4",
-        "class_name": "Multiply",
-        "config": {
-          "name": "multiply_4",
-          "trainable": true
-        },
-        "inbound_nodes": [
-          [
-            [
-              "up_sampling2d_9",
-              0,
-              0,
-              {}
             ],
             [
-              "max_pooling_mask2d_2",
+              "max_pooling_with_argmax2d_2",
               0,
-              0,
+              1,
               {}
             ]
           ]
@@ -2994,7 +2780,7 @@
         "inbound_nodes": [
           [
             [
-              "multiply_4",
+              "max_unpooling2d_4",
               0,
               0,
               {}
@@ -3180,16 +2966,11 @@
         ]
       },
       {
-        "name": "up_sampling2d_10",
-        "class_name": "UpSampling2D",
+        "name": "max_unpooling2d_5",
+        "class_name": "MaxUnpooling2D",
         "config": {
-          "name": "up_sampling2d_10",
-          "trainable": true,
-          "size": [
-            2,
-            2
-          ],
-          "data_format": "channels_last"
+          "name": "max_unpooling2d_5",
+          "trainable": true
         },
         "inbound_nodes": [
           [
@@ -3198,47 +2979,11 @@
               0,
               0,
               {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "max_pooling_mask2d_1",
-        "class_name": "MaxPoolingMask2D",
-        "config": {
-          "name": "max_pooling_mask2d_1",
-          "trainable": true
-        },
-        "inbound_nodes": [
-          [
-            [
-              "activation_2",
-              0,
-              0,
-              {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "multiply_5",
-        "class_name": "Multiply",
-        "config": {
-          "name": "multiply_5",
-          "trainable": true
-        },
-        "inbound_nodes": [
-          [
-            [
-              "up_sampling2d_10",
-              0,
-              0,
-              {}
             ],
             [
-              "max_pooling_mask2d_1",
+              "max_pooling_with_argmax2d_1",
               0,
-              0,
+              1,
               {}
             ]
           ]
@@ -3289,7 +3034,7 @@
         "inbound_nodes": [
           [
             [
-              "multiply_5",
+              "max_unpooling2d_5",
               0,
               0,
               {}
