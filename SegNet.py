@@ -15,7 +15,7 @@ import argparse
 import json
 from PIL import Image
 
-def CreateSegNet(input_shape, n_labels, kernel=3, pool_size=(2, 2)):
+def CreateSegNet(input_shape, n_labels, kernel=3, pool_size=(2, 2), loss_mode="softmax"):
     # encoder
     inputs = Input(shape=input_shape)
 
@@ -162,10 +162,10 @@ def CreateSegNet(input_shape, n_labels, kernel=3, pool_size=(2, 2)):
 
     conv_26 = Reshape((input_shape[0] * input_shape[1], n_labels), input_shape=(input_shape[0], input_shape[1], n_labels))(conv_26)
     conv_26 = Permute((2, 1))(conv_26)
-    predictions = Activation("softmax")(conv_26)
+    outputs = Activation(loss_mode)(conv_26)
     print("Build decoder done..")
 
-    segnet = Model(inputs=inputs, outputs=predictions, name="SegNet")
+    segnet = Model(inputs=inputs, outputs=outputs, name="SegNet")
 
     return segnet
 
