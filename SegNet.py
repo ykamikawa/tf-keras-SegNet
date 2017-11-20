@@ -224,9 +224,8 @@ if __name__ == "__main__":
     segnet.compile(loss=args.loss, optimizer=args.optimizer, metrics=["accuracy"])
     segnet.fit_generator(train_gen, steps_per_epoch=args.epoch_steps, epochs=args.n_epochs, validation_data=val_gen, validation_steps=args.val_steps)
 
-    segnet.save_weights("../dataset/LIP/pretrained/LIP_SegNet"+args.n_epochs+".hdf5")
+    segnet.save_weights("../LIP/pretrained/LIP_SegNet"+str(args.n_epochs)+".hdf5")
     print("sava weight done..")
 
-    with open("LIP_SegNet"+args.n_epochs+".json", "w") as json_file:
-        json_file.write(json.dumps(json.loads(segnet.to_json()), indent=2))
-    print("save json model done...")
+    json_string = segnet.to_json()
+    open("../LIP/pretrained/LIP_SegNet.json", "w").write(json_string)
