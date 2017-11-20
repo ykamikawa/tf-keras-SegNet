@@ -8,7 +8,7 @@ from keras.layers.merge import Multiply, Concatenate
 from keras.utils import np_utils
 
 from Mylayers import MaxPoolingWithArgmax2D, MaxUnpooling2D
-from generator import binarylab, gray2rgb, data_gen_small
+from generator import data_gen_small
 
 import os
 import numpy as np
