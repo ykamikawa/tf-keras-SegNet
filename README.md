@@ -37,6 +37,6 @@ In the future, we plan to implement models with high accuracy.(UNet,PSPNet,Pix2P
 </div>
 
 The problem of binary mask works well with SegNet.
-<div>
+<div align="center">
 <img src="https://user-images.githubusercontent.com/27678705/33703457-8a504fdc-db6b-11e7-8922-db3c61294b18.png" alt="demo2">
 </div>
