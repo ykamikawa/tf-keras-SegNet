@@ -1,6 +1,8 @@
 # SegNet
 
-SegNet is a model of semantic segmentation based on Fully Comvolutional Network. This repository contains the implementation of learning and testing in keras and tensorflow.
+SegNet is a model of semantic segmentation based on Fully Comvolutional Network.
+
+This repository contains the implementation of learning and testing in keras and tensorflow.
 
 ![architectire](https://user-images.githubusercontent.com/27678705/33704504-199ba3ea-db70-11e7-8009-dc23aa9770a0.png)
 
@@ -8,6 +10,7 @@ SegNet is a model of semantic segmentation based on Fully Comvolutional Network.
 - encoder decoder architecture
 - fully convolutional network
 - indices pooling
+
     ![indecespooling](https://user-images.githubusercontent.com/27678705/33704612-81053eec-db70-11e7-9822-01dd48d68314.png)
 
 ## description
@@ -16,6 +19,7 @@ The repository of other people's segmentation, pooling with indices not implemen
 
 Segnet architecture is early Semantic Segmentation model,so acccuracy is low but fast.
 In the future, we plan to implement models with high accuracy.(UNet,PSPNet,Pix2Pix ect..)
+
 
 
 ## Usage
@@ -33,11 +37,6 @@ In the future, we plan to implement models with high accuracy.(UNet,PSPNet,Pix2P
 </div>
 
 The problem of binary mask works well with SegNet.
-
-<div align="center">
-![demo2](https://user-images.githubusercontent.com/27678705/33703457-8a504fdc-db6b-11e7-8922-db3c61294b18.png)
+<div>
+<img src="https://user-images.githubusercontent.com/27678705/33703457-8a504fdc-db6b-11e7-8922-db3c61294b18.png" alt="demo2">
 </div>
-
-## Auther
-
-ykamikawa
