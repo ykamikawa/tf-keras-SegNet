@@ -3,6 +3,7 @@
 SegNet is a model of semantic segmentation based on Fully Comvolutional Network.
 
 This repository contains the implementation of learning and testing in keras and tensorflow.
+Also included is a custom layer implementation of index pooling, a new property of segnet.
 
 ![architectire](https://user-images.githubusercontent.com/27678705/33704504-199ba3ea-db70-11e7-8009-dc23aa9770a0.png)
 
