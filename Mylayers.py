@@ -2,6 +2,7 @@
 from keras import backend as K
 from keras.layers import Layer
 
+
 class MaxPoolingWithArgmax2D(Layer):
     def __init__(self, pool_size=(2, 2), strides=(2, 2), padding='same', **kwargs):
         super(MaxPoolingWithArgmax2D, self).__init__(**kwargs)
