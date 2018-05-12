@@ -173,22 +173,16 @@ if __name__ == "__main__":
     # command line argments
     parser = argparse.ArgumentParser(description="SegNet LIP dataset")
     parser.add_argument("--train_list",
-            default="../LIP/TrainVal_images/train_id.txt",
             help="train list path")
     parser.add_argument("--trainimg_dir",
-            default="../LIP/TrainVal_images/TrainVal_images/train_images/",
             help="train image dir path")
     parser.add_argument("--trainmsk_dir",
-            default="../LIP/TrainVal_parsing_annotations/TrainVal_parsing_annotations/train_segmentations/",
             help="train mask dir path")
     parser.add_argument("--val_list",
-            default="../LIP/TrainVal_images/val_id.txt",
             help="val list path")
     parser.add_argument("--valimg_dir",
-            default="../LIP/TrainVal_images/TrainVal_images/val_images/",
             help="val image dir path")
     parser.add_argument("--valmsk_dir",
-            default="../LIP/TrainVal_parsing_annotations/TrainVal_parsing_annotations/val_segmentations/",
             help="val mask dir path")
     parser.add_argument("--batch_size",
             default=10,
