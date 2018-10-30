@@ -1,11 +1,9 @@
-import os
-import numpy as np
 import argparse
-import json
 import pandas as pd
 
 from  model import segnet
-from generator import data_gen_small 
+from generator import data_gen_small
+
 
 def argparser():
     # command line argments
@@ -54,8 +52,8 @@ def argparser():
 
 def main(args):
     # set the necessary list
-    train_list = pd.read_csv(args.train_list,header=None)
-    val_list = pd.read_csv(args.val_list,header=None)
+    train_list = pd.read_csv(args.train_list, header=None)
+    val_list = pd.read_csv(args.val_list, header=None)
 
     # set the necessary directories
     trainimg_dir = args.trainimg_dir
@@ -63,10 +61,12 @@ def main(args):
     valimg_dir = args.valimg_dir
     valmsk_dir = args.valmsk_dir
 
-    train_gen = data_gen_small(trainimg_dir, trainmsk_dir, train_list,
-            args.batch_size, [args.input_shape[0], args.input_shape[1]], args.n_labels)
-    val_gen = data_gen_small(valimg_dir, valmsk_dir, val_list,
-            args.batch_size, [args.input_shape[0], args.input_shape[1]], args.n_labels)
+    train_gen = data_gen_small(trainimg_dir, trainmsk_dir,
+            train_list, args.batch_size,
+            [args.input_shape[0], args.input_shape[1]], args.n_labels)
+    val_gen = data_gen_small(valimg_dir, valmsk_dir,
+            val_list, args.batch_size,
+            [args.input_shape[0], args.input_shape[1]], args.n_labels)
 
     model = segnet(args.input_shape, args.n_labels,
             args.kernel, args.pool_size, args.output_mode)
@@ -85,4 +85,3 @@ def main(args):
 if __name__ == "__main__":
     args = argparser()
     main(args)
-
